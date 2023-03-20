@@ -1,0 +1,28 @@
+      *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #6A8EC8;
+        }
+        label{
+            font-size: 10px;
+            align-self: center;
+        }
+        #filecontents {
+            background-color: white;
+            overflow-y: scroll;
+            border: 7px solid yellow;
+            border-radius: 10px;
+            height: 250px;
+        }
+
+        #validacao {
+            background-color: #fafafa;
+            border: 7px solid yellow;
+            border-radius: 10px;
+            overflow-y: scroll;
+            height: 150px;
+        }
+
+        #roda {
+            width: 50%;
+            height: 50%;
+        }
