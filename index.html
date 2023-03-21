@@ -12,11 +12,12 @@
 
 <body>
     <main>
-        <label for="txtfiletoread">Selecione o arquivo que será lido:</label>
-        <input type="file" name="File" id="txtfiletoread">
+        <h1 for="txtfiletoread">Selecione o arquivo que será lido:</h1>
+        
+        <div id="inputa"><input type="file" name="File" id="txtfiletoread"></div>
         <div id="filecontents"></div>
-        <label for="validacao"><strong>Validação:</strong></label>
-        <button id="Roda">Validar</button>
+        <h1 for="validacao">Validação:</h1>
+        <div id="butao"> <button id="Roda">Validar</button> </div>
         <div id="validacao"></div>
     </main>
 
@@ -64,7 +65,8 @@
                     const line2 = lines[i + 1];
                     if (line2 && line2.length >= 160) {
                         const interval2 = line2.substring(127, 160).trim();
-                        validacaoHtml += interval1 + " " + interval2 + "<br>";
+                        const condicao = (interval1 != interval2) ? 'Errado' : 'Correto';
+                        validacaoHtml += interval1 + " " + interval2 + " " + condicao + "<br>";
                     }
                     
                 }
@@ -73,9 +75,9 @@
             validacao.innerHTML = validacaoHtml;
         });
 
+    
 
     </script>
 </body>
 
 </html>
-
