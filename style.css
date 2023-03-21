@@ -1,83 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Leitor de Pix e CNPJ</title>
-  
-</head>
-
-<body>
-    <main>
-        <h1 for="txtfiletoread">Selecione o arquivo que será lido:</h1>
-        
-        <div id="inputa"><input type="file" name="File" id="txtfiletoread"></div>
-        <div id="filecontents"></div>
-        <h1 for="validacao">Validação:</h1>
-        <div id="butao"> <button id="Roda">Validar</button> </div>
-        <div id="validacao"></div>
-    </main>
-
-    <script>
-        var fileReader;
-        var fileContentes = document.getElementById("filecontents");
-        var validacao = document.getElementById("validacao");
-
-        window.onload = function () {
-            if (window.File && window.FileReader && window.FileList && window.Blob) {
-                var fileSelected = document.getElementById("txtfiletoread");
-
-                fileSelected.addEventListener('change', function (e) {
-                    var fileExtension = /text.*/;
-                    var fileTobeRead = fileSelected.files[0];
-
-                    if (fileTobeRead.type.match(fileExtension)) {
-                        fileReader = new FileReader();
-
-                        fileReader.onload = function (e) {
-                            fileContentes.innerText = fileReader.result;
-                        }
-
-                        fileReader.readAsText(fileTobeRead);
-                    } else {
-                        alert("Por favor selecione arquivo texto")
-                    }
-
-                }, false);
-            } else {
-                alert("Arquivo(s) não suportado(s)")
-            }
+      *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #6A8EC8;
+        }
+        h1 {
+            margin: 20px;
+            height: 25px;
+            color: white;
+            text-align: center;
+            
+        }
+        #filecontents {
+            background-color: white;
+            overflow-y: scroll;
+            height: 250px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         }
 
+        #validacao {
+            background-color: white;
+            overflow-y: scroll;
+            height: 250px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            margin-top: 1%; 
+        }
 
-        const btn = document.getElementById("Roda");
-        btn.addEventListener("click", function () {
-            const fileContent = fileReader.result;
-            let validacaoHtml = "";
-            const lines = fileContent.split(/\r?\n/);
-            for (let i = 2; i < lines.length; i += 2) {
-                const line1 = lines[i];
-                if (line1 && line1.length >= 218) {
-                    const interval1 = line1.substring(203, 218).trim();
-                    const line2 = lines[i + 1];
-                    if (line2 && line2.length >= 160) {
-                        const interval2 = line2.substring(127, 160).trim();
-                        const condicao = (interval1 != interval2) ? 'Errado' : 'Correto';
-                        validacaoHtml += interval1 + " " + interval2 + " " + condicao + "<br>";
-                    }
-                    
-                }
-            }
-            const validacao = document.getElementById("validacao");
-            validacao.innerHTML = validacaoHtml;
-        });
+        #butao{
+            display: grid;
+            grid-template-columns: repeat(3 , 1fr);
+        }
 
-    
+        #inputa {
+            
+            display: grid;
+            grid-template-columns: repeat(3 , 1fr);
 
-    </script>
-</body>
+        }
+        button {
 
-</html>
+            background: -webkit-linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);
+            border: 1px solid #CCCCCE;
+            border-radius: 3px;
+            box-shadow: 0 3px 0 rgba(0, 0, 0, .3),0 2px 7px rgba(0, 0, 0, 0.2);
+            color: #616165;
+            display: block;
+            font-family: "Trebuchet MS";
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 25px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-shadow:1px 1px 0 #FFF;
+            position: relative;
+            width: 80px;
+            cursor:pointer; 
+            justify-self: center; 
+            grid-column: 2;
+            margin-top: 2%;
+        }
+
+        button:active{
+            background: -webkit-linear-gradient(bottom, #afafaf, rgba(217, 217, 217)0%);
+            box-shadow: 0 0px 0 rgba(0, 0, 0, .3),0 2px 7px rgba(0, 0, 0, 0.2)
+        }
