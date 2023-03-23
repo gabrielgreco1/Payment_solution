@@ -1,65 +1,141 @@
-      *{
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            background-color: #6A8EC8;
-        }
-        h1 {
-            margin: 20px;
-            height: 25px;
-            color: white;
-            text-align: center;
-            
-        }
-        #filecontents {
-            background-color: white;
-            overflow-y: scroll;
-            height: 250px;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-        #validacao {
-            background-color: white;
-            overflow-y: scroll;
-            height: 250px;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-            margin-top: 1%; 
-        }
 
-        #butao{
-            display: grid;
-            grid-template-columns: repeat(3 , 1fr);
-        }
+* {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    background-color: #6A8EC8;
+    margin:0;
+    padding: 0; 
+    box-sizing: border-box;
+}
 
-        #inputa {
-            
-            display: grid;
-            grid-template-columns: repeat(3 , 1fr);
+img{
+    max-width: 95px;
+    margin-bottom: -1%;
+}
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 55px;
+    background-color: #2f5da8;
+}
+li {
+    display: inline;
+    background-color: transparent;
+}
+li a {
+    color: #FFF;
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+}
+a {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    text-decoration:underline solid white;
+    background-color: transparent;
+}
+#selecione {
+    margin-bottom: 3%;
+    height: 10px;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: -1px;
+    word-spacing: 0.8px;
+    text-decoration:  solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: lowercase;
+}
 
-        }
-        button {
+#flash {
+    height: 120px;
+}
 
-            background: -webkit-linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);
-            border: 1px solid #CCCCCE;
-            border-radius: 3px;
-            box-shadow: 0 3px 0 rgba(0, 0, 0, .3),0 2px 7px rgba(0, 0, 0, 0.2);
-            color: #616165;
-            display: block;
-            font-family: "Trebuchet MS";
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 25px;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            text-shadow:1px 1px 0 #FFF;
-            position: relative;
-            width: 80px;
-            cursor:pointer; 
-            justify-self: center; 
-            grid-column: 2;
-            margin-top: 2%;
-        }
 
-        button:active{
-            background: -webkit-linear-gradient(bottom, #afafaf, rgba(217, 217, 217)0%);
-            box-shadow: 0 0px 0 rgba(0, 0, 0, .3),0 2px 7px rgba(0, 0, 0, 0.2)
-        }
+#filecontents {
+    background: white;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 250px;
+    width: 40%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#filecontentsTED {
+    background: white;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 250px;
+    width: 40%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#inputa{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#validacao {
+    background: white;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 250px;
+    width: 40%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#validacaoTED {
+    background: white;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 250px;
+    width: 40%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#telas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#filecontents, #validacao {
+    width: 40%;
+}
+button {
+    background: -webkit-linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);
+    border: 1px solid #CCCCCE;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, .3), 0 2px 7px rgba(0, 0, 0, 0.2);
+    color: #616165;
+    font-family: "Trebuchet MS";
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #FFF;
+    position: relative;
+    width: 80px;
+    height: 25px;
+    cursor: pointer;;
+    grid-column: 2;
+    margin-top: 1%;
+}
+
+button{
+    display:flex;
+    justify-content: center;
+}
+button:active {
+    background: -webkit-linear-gradient(bottom, #afafaf, rgba(217, 217, 217)0%);
+    box-shadow: 0 0px 0 rgba(0, 0, 0, .3), 0 2px 7px rgba(0, 0, 0, 0.2)
+}  
