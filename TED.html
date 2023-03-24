@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Leitor de CNAB</title>
+
+</head>
+
+<body>
+    <main>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../Testing/pix.html">PIX</a>
+                </li>
+                </li>
+                <li><a href="../Testing/TED.html"style="text-decoration: underline solid white";>TED</a></li>
+            </ul>
+        </nav>
+        <img src="/Testing/flash.png">
+        <h1 id="selecione" for="txtfiletoread">Selecione o arquivo que será validado:</h1>
+        <div id="inputa"><input type="file" name="File" id="txtfiletoread" accept="text/plain"></div>
+        <div id="cabeca"><pre>     CNPJ      |                SITUAÇÃO    </pre></div>
+        <div id="telas">
+            <div id="filecontents"></div>
+            <button id="RodaTED">Validar</button>
+            <div id="validacao"></div>
+        </div>
+
+
+    </main>
+
+    <script src="./script.js">
+        // Validador TED - BANCO ITAU (341)
+        const btnTED = document.getElementById("RodaTED");
+        btnTED.addEventListener("click", function () {
+            const fileContentT = fileReader.result;
+            let validacaoHTML2 = "";
+            const linesT = fileContentT.split(/\r?\n/);
+            for (let i = 2; i < linesT.length; i += 2) {
+                const line1T = linesT[i];
+                    if (line1T && line1T.length > 218) {
+                        const interval1T = line1T.substring(20, 23).trim(); //BANCO
+                        const interval2T = line1T.substring(24, 28).trim(); //AGENCIA
+                        const interval3T = line1T.substring(36, 41).trim(); //CONTA
+                        const interval4T = line1T.substring(42, 43).trim(); //DIGITO CONTA
+                        const line2T = linesT[i + 1];
+                        if (line2T && line2T.length >= 160) {
+                            const interval5T = line2T.substring(19, 32).trim();  //CNPJ
+                            const condicao =  (interval1T != '341') ? 'Errado' : 'Correto';
+                            validacaoHTML2 += interval1T + " " + interval2T + " " + interval3T + " " + interval4T + " " + interval5T + " "+ condicao + "<br>";
+                          
+                        }
+
+                    }
+
+
+
+             }
+        const validacaoTED = document.getElementById("validacaoTED");
+        validacaoTED.innerHTML = validacaoHTML2;
+         }) 
+    </script>
+</body>
+
+</html>

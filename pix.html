@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Leitor de CNAB</title>
+
+</head>
+
+<body>
+    <main>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../Testing/pix.html" style="text-decoration: underline solid white;">PIX</a>
+                </li>
+                </li>
+                <li><a href="../Testing/TED.html">TED</a></li>
+            </ul>
+        </nav>
+        <img src="/Testing/flash.png">
+        <h1 id="selecione" for="txtfiletoread">Selecione o arquivo que será validado:</h1>
+        <div id="inputa"><input type="file" name="File" id="txtfiletoread" accept="text/plain"></div>
+        <div id="cabeca"><pre>     CNPJ      |                SITUAÇÃO    </pre></div>
+        <div id="telas">
+            <div id="filecontents"></div>
+            <button id="Roda">Validar</button>
+            <div id="validacao"></div>
+        </div>
+
+
+    </main>
+
+    <script src="./script.js">
+    </script>
+</body>
+
+</html>

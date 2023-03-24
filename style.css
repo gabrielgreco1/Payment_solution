@@ -43,6 +43,21 @@ a {
     text-decoration:underline solid white;
     background-color: transparent;
 }
+#cabeca {
+    font-size: 23px;
+    margin-top: 10px;   
+    margin-bottom: -14px;
+    display: grid;
+    grid-template-columns: 3fr 2.2fr;
+    grid-column-start: 2;
+}
+pre{
+    grid-column-start: 2;
+    color: white;
+}
+span{
+    font-family: 'Courier New', Courier, monospace;
+}
 #selecione {
     margin-bottom: 3%;
     height: 10px;
@@ -110,6 +125,23 @@ a {
 #filecontents, #validacao {
     width: 40%;
 }
+
+#validacao .CNPJ1 {
+    font-size: 15px;
+    background-color: white;
+}
+
+#validacao .titulo {
+    background-color: white;
+    font-size: 20px;
+}
+
+#validacao .condicao {
+    font-size:15px;
+    background-color: white; 
+    color: red;
+}
+
 button {
     background: -webkit-linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);
     border: 1px solid #CCCCCE;
@@ -139,3 +171,8 @@ button:active {
     background: -webkit-linear-gradient(bottom, #afafaf, rgba(217, 217, 217)0%);
     box-shadow: 0 0px 0 rgba(0, 0, 0, .3), 0 2px 7px rgba(0, 0, 0, 0.2)
 }  
+
+
+
+
+
