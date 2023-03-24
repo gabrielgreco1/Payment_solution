@@ -28,13 +28,42 @@
         <div id="telas">
             <div id="filecontents"></div>
             <button id="RodaTED">Validar</button>
-            <div id="validacao"></div>
+            <div id="validacaoTED"></div>
         </div>
 
 
     </main>
 
-    <script src="./script.js">
+    <script>
+        var fileReader;
+        var fileContentes = document.getElementById("filecontents" /* && "filecontentsTED"*/);
+        var validacao = document.getElementById("validacaoTED"); 
+
+window.onload = function () {
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        var fileSelected = document.getElementById("txtfiletoread");
+
+        fileSelected.addEventListener('change', function (e) {
+            var fileExtension = /text.*/;
+            var fileTobeRead = fileSelected.files[0];
+
+            if (fileTobeRead.type.match(fileExtension)) {
+                fileReader = new FileReader();
+
+                fileReader.onload = function (e) {
+                    fileContentes.innerText = fileReader.result;
+                }
+
+                fileReader.readAsText(fileTobeRead);
+            } else {
+                alert("Por favor selecione arquivo texto")
+            }
+
+        }, false);
+    } else {
+        alert("Arquivo(s) não suportado(s)")
+    }
+}
         // Validador TED - BANCO ITAU (341)
         const btnTED = document.getElementById("RodaTED");
         btnTED.addEventListener("click", function () {
