@@ -1,5 +1,5 @@
 var fileReader;
-var fileContentes = document.getElementById("filecontents");
+var fileContentes = document.getElementById("filecontents" /* && "filecontentsTED"*/);
 var validacao = document.getElementById("validacao"); 
 
 window.onload = function () {
