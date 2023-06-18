@@ -1,4 +1,4 @@
-# Payment_solution
+# Validador de arquivo CNAB
 Repositório destinado para demonstração dos códigos para evitar erros em pagamentos tipo CNAB.
 
 Realizamos atualmente cerca de 1000 pagamentos mensais, e todos são feitos via arquivo CNAB, um arquivo gerado pelo sistema que consiste basicamente em carregar todas as informações necessárias dos pagamentos que serão enviadas para o banco. Normalmente cada arquivo contém 250 a 500 pagamentos. 
